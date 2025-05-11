@@ -5,11 +5,10 @@ Usage:  python3 display.py path/to/picture.png
 """
 import os, sys, time
 from PIL import Image
+import epaper
 
 # Locate driver (only needed if you installed by git instead of PyPI)
 # sys.path.append('/usr/local/lib/python3.*/dist-packages')
-
-from waveshare_epd import epd5in65f   # 7-colour ACeP panel
 
 PALETTE = [
     (0,   0,   0  ),  # black
@@ -28,7 +27,7 @@ def palette_image(img: Image.Image, epd):
     return img.convert("RGB").resize((epd.width, epd.height)).quantize(palette=pal_img)
 
 def main(path):
-    epd = epd5in65f.EPD()
+    epd = epaper.epaper('epd5in65f').EPD()
     epd.init()           # power-on & LUT
     epd.Clear()          # white the canvas
 
