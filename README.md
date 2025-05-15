@@ -1,5 +1,7 @@
 Below is a compact, production-tested recipe for pushing a bitmap or PNG from a URL to to the Waveshare 5.65-inch (often advertised as 5.6-inch) ACeP 7-colour e-paper that is wired to a Raspberry Pi over SPI.  The same pattern works for the monochrome variants—just swap the driver class (e.g. `epd5in83`)—but the palette step is only required for the 7-colour model.  Everything is standard Pillow + Waveshare’s official driver and keeps power-down current in the µA range by ending with `epd.sleep()`.
 
+For the image generation code, see [this repo][11].
+
 ---
 
 ## 1 · Hardware & OS Preparation
@@ -128,3 +130,4 @@ Once SPI is enabled and the driver is installed, this 40-line script is all you 
 [8]: https://github.com/txoof/epdlib?utm_source=chatgpt.com "txoof/epdlib: Python library for creating and writing modular ... - GitHub"
 [9]: https://www.waveshare.com/wiki/Pico-ePaper-5.65?utm_source=chatgpt.com "Pico e-Paper 5.65 - Waveshare Wiki"
 [10]: https://github.com/robweber/omni-epd?utm_source=chatgpt.com "robweber/omni-epd - GitHub"
+[11]: https://github.com/lglik/83afab3c39
